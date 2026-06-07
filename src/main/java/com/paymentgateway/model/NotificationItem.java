@@ -3,20 +3,20 @@ package com.paymentgateway.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class OrderInfo {
+public class NotificationItem {
     private String orderId;
     private String merchantId;
+    private PaymentStatus paymentStatus;
     private BigDecimal amount;
     private String currency;
-    private PaymentStatus paymentStatus;
     private LocalDateTime createdAt;
 
-    public OrderInfo(String orderId, String merchantId, BigDecimal amount, String currency, PaymentStatus paymentStatus, LocalDateTime createdAt) {
+    public NotificationItem(String orderId, String merchantId, PaymentStatus paymentStatus, BigDecimal amount, String currency, LocalDateTime createdAt) {
         this.orderId = orderId;
         this.merchantId = merchantId;
+        this.paymentStatus = paymentStatus;
         this.amount = amount;
         this.currency = currency;
-        this.paymentStatus = paymentStatus;
         this.createdAt = createdAt;
     }
 
@@ -36,6 +36,14 @@ public class OrderInfo {
         this.merchantId = merchantId;
     }
 
+    public PaymentStatus getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(PaymentStatus paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
     public BigDecimal getAmount() {
         return amount;
     }
@@ -50,14 +58,6 @@ public class OrderInfo {
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-    public PaymentStatus getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(PaymentStatus paymentStatus) {
-        this.paymentStatus = paymentStatus;
     }
 
     public LocalDateTime getCreatedAt() {
