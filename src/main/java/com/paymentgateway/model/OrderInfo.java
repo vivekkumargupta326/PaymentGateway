@@ -8,15 +8,13 @@ public class OrderInfo {
     private String merchantId;
     private BigDecimal amount;
     private String currency;
-    private PaymentStatus paymentStatus;
     private LocalDateTime createdAt;
 
-    public OrderInfo(String orderId, String merchantId, BigDecimal amount, String currency, PaymentStatus paymentStatus, LocalDateTime createdAt) {
+    public OrderInfo(String orderId, String merchantId, BigDecimal amount, String currency, LocalDateTime createdAt) {
         this.orderId = orderId;
         this.merchantId = merchantId;
         this.amount = amount;
         this.currency = currency;
-        this.paymentStatus = paymentStatus;
         this.createdAt = createdAt;
     }
 
@@ -50,14 +48,6 @@ public class OrderInfo {
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-    public PaymentStatus getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(PaymentStatus paymentStatus) {
-        this.paymentStatus = paymentStatus;
     }
 
     public LocalDateTime getCreatedAt() {

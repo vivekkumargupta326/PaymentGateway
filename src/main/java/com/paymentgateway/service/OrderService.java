@@ -1,7 +1,6 @@
 package com.paymentgateway.service;
 
 import com.paymentgateway.model.OrderInfo;
-import com.paymentgateway.model.PaymentStatus;
 import com.paymentgateway.store.OrderStore;
 
 import java.math.BigDecimal;
@@ -15,7 +14,7 @@ public class OrderService {
     }
 
     public OrderInfo createOrder(String orderId, String merchantId, BigDecimal amount, String currency, LocalDateTime createdAt) {
-        OrderInfo orderInfo = new OrderInfo(orderId, merchantId, amount, currency, PaymentStatus.PENDING, createdAt);
+        OrderInfo orderInfo = new OrderInfo(orderId, merchantId, amount, currency, createdAt);
         return orderStore.save(orderInfo);
     }
 }
